@@ -1,0 +1,16 @@
+# Aliases for  bash & zsh
+
+# Shortcut
+alias rm='rm -i'
+
+# Update 
+alias update='sudo apt update && sudo apt upgrade'
+alias autoremove='sudo apt autoremove'
+
+# git commands
+alias gc='git clone '
+alias gcom='git add . && git commit -m '
+alias gp='git push'
+
+# Application specific
+alias tb='~/Downloads/thunderbird/thunderbird'
