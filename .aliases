@@ -1,5 +1,3 @@
-# Aliases for  bash & zsh
-
 # Shortcut
 alias rm='rm -i'
 
