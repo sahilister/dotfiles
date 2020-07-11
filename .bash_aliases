@@ -1,6 +1,8 @@
 # Shortcut
 alias rm='rm -i'
 alias clr='clear'
+alias shutdown='sudo shutdown now'
+alias open='xdg-open'
 
 # Updatation and Installation
 alias update='sudo apt update && sudo apt upgrade'
