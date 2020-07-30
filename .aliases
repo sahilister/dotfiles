@@ -4,6 +4,10 @@ alias clr='clear'
 alias shutdown='sudo shutdown now'
 alias open='xdg-open'
 
+# System Controls - volume
+alias vol='amixer get Master'
+alias volset='amixer -D pulse sset Master'
+
 # Updatation and Installation
 alias update='sudo apt update && sudo apt upgrade'
 alias autoremove='sudo apt autoremove'
@@ -16,4 +20,4 @@ alias gp='git push'
 alias grest='git restore --staged '
 
 # Application specific
-alias tb='~/Downloads/thunderbird/thunderbird'
+alias tb='~/thunderbird/thunderbird'
