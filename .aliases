@@ -9,10 +9,11 @@ alias vol='amixer get Master'
 alias volset='amixer -D pulse sset Master'
 alias bright='cd /sys/class/backlight/intel_backlight && echo "NOW DO - echo XXX | sudo tee brightness"'
 
-# Updatation and Installation
+# apt
 alias update='sudo apt update && sudo apt upgrade'
 alias autoremove='sudo apt autoremove'
 alias install='sudo apt install'
+alias purge='sudo apt purge'
 
 # git commands
 alias gc='git clone '
