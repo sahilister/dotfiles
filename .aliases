@@ -1,8 +1,20 @@
 # Shortcut
-alias rm='rm -i'
 alias clr='clear'
 alias shutdown='sudo shutdown now'
 alias open='xdg-open'
+alias la='ls -a'
+
+# adding flags
+alias rm='rm -i'
+alias df='df -h'
+alias free='free -m'
+
+# Navigation
+alias ..='cd ..'
+alias ...='cd ../..'
+alias .3='cd ../../..'
+alias .4='cd ../../../..'
+alias .5='cd ../../../../..'
 
 # System Controls
 alias vol='amixer get Master'
@@ -23,3 +35,6 @@ alias grest='git restore --staged '
 
 # Application specific
 alias tb='~/thunderbird/thunderbird'
+
+# the terminal rickroll 
+alias rr='curl -s -L https://raw.githubusercontent.com/keroserene/rickrollrc/master/roll.sh | bash' 
