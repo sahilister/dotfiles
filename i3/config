@@ -98,8 +98,8 @@ set $ws1 "primary"
 set $ws2 "secondary"
 set $ws3 "thunderbird"
 set $ws4 "element"
-set $ws5 "baggage"
-set $ws6 "6"
+set $ws5 "temp"
+set $ws6 "redshift"
 set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
@@ -163,36 +163,70 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+# Colors
+set_from_resource $black        i3wm.color0   #282828
+set_from_resource $darkred      i3wm.color1   #cc241d
+set_from_resource $darkgreen    i3wm.color2   #98971a
+set_from_resource $darkyellow   i3wm.color3   #d79921
+set_from_resource $darkblue     i3wm.color4   #458588
+set_from_resource $darkmagenta  i3wm.color5   #b16286
+set_from_resource $darkcyan     i3wm.color6   #689d6a
+set_from_resource $lightgray    i3wm.color7   #a89984
+set_from_resource $darkgray     i3wm.color8   #928374
+set_from_resource $red          i3wm.color9   #fb4934
+set_from_resource $green        i3wm.color10  #b8bb26
+set_from_resource $yellow       i3wm.color11  #fabd2f
+set_from_resource $blue         i3wm.color12  #83a598
+set_from_resource $magenta      i3wm.color13  #d3869b
+set_from_resource $cyan         i3wm.color14  #8ec07c
+set_from_resource $white        i3wm.color15  #f0ffff
+
+
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
         status_command i3status
 	position top
 	font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
-    	font pango:DejaVu Sans Mono 9
+    	#font pango: Pragmata Pro Liga 10
+	font pango: Terminus Mono 10
 	status_command exec ~/.config/i3/net-speed.sh
 	i3bar_command i3bar --transparency
 	# Take a screenshot by right clicking on the bar
     	bindsym --release button3 exec --no-startup-id import ~/Pictures/latest-screenshot.png
+	bindsym Print  	exec --no-startup-id maim pic-full-"$(date '+%y%m%d-%H%M-%S').png"	
+	colors {
+    		separator $darkmagenta
+		background $black
+		statusline $white
+		
+		# class             border      background    text
+		focused_workspace   $lightgray  $darkblue        $black
+		active_workspace    $lightgray  $darkcyan    $black
+		inactive_workspace  $lightgray  $white          $black
+		urgent_workspace    $lightgray  $darkyellow   $black
+		binding_mode        $lightgray  $yellow       $black
+	}
 }
 
-# thunderbird bindning 
+# Application bindings 
 bindsym $mod+t exec ~/thunderbird/thunderbird
+#bindsym $mod+e exec ~/element-desktop
+#bindsym $mod+b exec ~/firefox 
 
 # volumne bindings
 	bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 -- +10% && killall -SIGUSR1 i3status
 	bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -- -10% && killall -SIGUSR1 i3status
 	
 
-# Increase brightness
+# Brightness
 	bindsym XF86MonBrightnessUp exec xbacklight -inc 5
-	
-# Decrease brightness
  	bindsym XF86MonBrightnessDown exec xbacklight -dec 5 
 
 	
 for_window [class="plasmashell" window_type="notification"] floating enable, border none, move position 1450px 20px
-exec --no-startup-id feh --bg-scale ~/wallpapers/u89wv0u960j51.png
+
+
 
 
 ### i3-gaps stuff ###
