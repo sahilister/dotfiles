@@ -1,7 +1,7 @@
 # Shortcut
 alias clr='clear'
 alias shutdown='sudo shutdown now'
-alias reboot='sudo shutdown -r'
+alias reboot='sudo shutdown -r now'
 alias open='xdg-open'
 alias la='ls -a'
 
